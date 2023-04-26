@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<!--<data>-->
+<!--    <variable name="fragment"-->
+<!--        type="String">-->
+
+<!--    </variable>-->
+<!--</data>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity='center'
+    android:orientation="vertical"
+    tools:context=".fragments.homeFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_foreground" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Novelty Technology" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="30dp"
+        android:layout_height="wrap_content"
+        android:text="Play" />
+</LinearLayout>
+</layout>

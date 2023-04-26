@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+                    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment2">
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.colorapp.fragments.homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.colorapp.fragments.quizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_loseFragment"
+            app:destination="@id/loseFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_quizFragment_to_winFragment"
+            app:destination="@id/winFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.colorapp.fragments.winFragment"
+        android:label="Won"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_winFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/loseFragment"
+        android:name="com.example.colorapp.fragments.loseFragment"
+        android:label="Lose"
+        tools:layout="@layout/fragment_lose" >
+        <action
+            android:id="@+id/action_loseFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false" />
+    </fragment>
+<!--The popUpTo attribute in the navigation graph tells the app
+which destination to remove from the back stack when moving to a new destination.
+For example, if the user moves from Destination A to Destination C,
+you might want to remove Destination B from the back stack,
+ so the user can't go back to it by pressing the back button.
+
+The popUpToInclusive attribute specifies whether the destination
+ specified in popUpTo should be included or excluded from the pop.
+ If popUpToInclusive is set to true, the destination specified in
+  popUpTo will be removed along with all the other destinations above it in the back stack.
+ If popUpToInclusive is set to false,
+ the destination specified in popUpTo will not be removed.-->
+</navigation>
