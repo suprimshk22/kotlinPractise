@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:gravity="center"
-        android:text="@{quizModel.count}" />
+        android:text="@{@string/format_count(quizModel.count)}" />
 
 <!--    <TextView-->
 <!--        android:id="@+id/question"-->
@@ -69,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:onClick="@{()->quizModel.increment()}"
         />
     <!--        inside @{} is a data binding expression we can display value or call methods-->
     <Button
@@ -77,6 +78,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="win"
+        android:onClick="@{(view)->quizModel.onwin(view)}"
 />
 
     <Button

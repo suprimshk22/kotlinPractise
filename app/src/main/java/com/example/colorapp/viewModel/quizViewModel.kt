@@ -25,7 +25,7 @@ class QizViewModel(val initialValue:Int): ViewModel() {
         _count.value=initialValue
     }
     fun numberLength(){
-        if(count.value!! >10){
+        if(count?.value!! >10){
             _isTen.value=true
         }
     }

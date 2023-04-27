@@ -36,13 +36,14 @@ private lateinit var inc:TextView;
 //        here, QuizViewModelfactory is to pass parameter to view model .
 
         quizViewModel=ViewModelProvider(this,QuizViewModelFactory(5)).get(QizViewModel::class.java)
-//        connecting with xml (ui controller)
+//       IMP connecting with xml (ui controller) without uicontroller
         binding.quizModel=quizViewModel
         //        used for observing changes of LiveData in this binding.
         binding.setLifecycleOwner(this)
         Log.i("ViewModel","called...")
 //        quizViewModel.count.value="mutable live data so value cannot be set"
 //        ui controller observing changes in view model and set data as per change.
+//        intermidate between view and view model
 //        quizViewModel.count.observe(viewLifecycleOwner,Observer{
 //            binding.countNum.text=it.toString()
 //        })
@@ -55,17 +56,37 @@ private lateinit var inc:TextView;
 //         }
 //        })
 //        setTextCount()
-     binding.incrementBtn.setOnClickListener {
-         incrementCount()
-//         setTextCount( )
-     }
+//     binding.incrementBtn.setOnClickListener {
+//         incrementCount()
+////         setTextCount( )
+//     }
 //        binding.over.setOnClickListener{
 //            onOver(it)
 //        }
         binding.win.setOnClickListener{
+            Log.i("Binding","win${it}")
             onwin(it)
         }
         return binding.root
+    }
+
+    /**
+     * Called when the Fragment is visible to the user.  This is generally
+     * tied to [Activity.onStart] of the containing
+     * Activity's lifecycle.
+     */
+    override fun onStart() {
+        super.onStart()
+    }
+
+    /**
+     * Called when the fragment is visible to the user and actively running.
+     * This is generally
+     * tied to [Activity.onResume] of the containing
+     * Activity's lifecycle.
+     */
+    override fun onResume() {
+        super.onResume()
     }
 
     private fun incrementCount() {

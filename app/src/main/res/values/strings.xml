@@ -4,6 +4,7 @@
     <string name="box_two">BoxTwo</string>
     <string name="next_screen">Next</string>
     <string name="Send">send</string>
+    <string name="format_count">\count:%S\</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

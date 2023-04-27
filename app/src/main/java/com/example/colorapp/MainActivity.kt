@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var share:Button;
     lateinit var next:Button;
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i("main","create")
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(
@@ -61,13 +62,44 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        Log.i("main","start")
+        super.onStart()
+    }
+
+    override fun onStop() {
+        Log.i("main","onstop")
+        super.onStop()
+    }
+
     override fun onDestroy() {
+        Log.i("main","destroy")
         super.onDestroy()
     }
 
     private fun homePage() {
         var homeIntent=Intent(this,homeActivity::class.java)
         startActivity(homeIntent)
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Dispatch onPause() to fragments.
+     */
+    override fun onPause() {
+        Log.i("main","pause")
+        super.onPause()
+    }
+
+    override fun onRestart() {
+        Log.i("main","restart")
+        super.onRestart()
+    }
+
+    override fun onResume() {
+        Log.i("main","resume")
+        super.onResume()
     }
 
     private fun openCamera() {
